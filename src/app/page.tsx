@@ -101,6 +101,7 @@ export default function Home() {
             <div className="flex gap-4 mt-2 text-gray-700">
               <span>📈 Potenciar Ventas</span>
               <span>🏗️ Expansión</span>
+              <span>💼 Capital de Trabajo</span>
             </div>
           </div>
         </div>
@@ -115,11 +116,12 @@ export default function Home() {
             </p>
             <p className="mt-3 font-medium">Ideales para:</p>
             <div className="flex gap-4 mt-2 text-gray-700">
-              <span>🏠 Casa</span>
-              <span>❤️ Salud</span>
-              <span>📚 Estudios</span>
+              <span>🚗 Vehiculo</span>
+              <span>🏍️ Motocicleta</span>
+              <span>🚚 Camioneta</span>
             </div>
           </div>
+
           <Image
             src="/vehiculo.jpg"
             alt="Vehículos"
@@ -195,9 +197,9 @@ export default function Home() {
           Haz crecer tu negocio con nuestros préstamos a bajo interés
         </h2>
 
-        <div className="flex w-[70%] gap-[2%] justify-center items-center mb-12">
+        <div className="flex w-[70%] gap-[2%] justify-center items-start mb-12">
 
-          <div className="w-[30%]">
+          <div className="w-[30%] border-r-[.2rem] border-red-500 pr-10">
 
             <h3 className=" font-semibold mb-3 text-red-600">
               Tasas de interés bajas:
@@ -210,19 +212,19 @@ export default function Home() {
             
           </div>
 
-          <div className=" w-[30%]">
+          <div className=" w-[35%]  px-10 ">
 
             <h3 className="font-semibold mb-3 text-red-600">
               Requisitos flexibles:
             </h3>
 
-            <p className="text-gray-600">
+            <p className="text-gray-600 ">
               No te pedimos avales ni trámites complicados, solo lo necesario para evaluar tu solicitud.
             </p>
             
           </div>
 
-          <div className="w-[30%]">
+          <div className="w-[30%] border-l-[.2rem] border-red-500 pl-10">
 
             <h3 className="font-semibold mb-3 text-red-600">
               Atención personalizada:
