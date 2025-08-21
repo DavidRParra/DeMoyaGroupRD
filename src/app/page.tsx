@@ -174,6 +174,43 @@ export default function Home() {
   </div>
 </section>
 
+<section className="py-16 px-6 flex flex-col items-center">
+  <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
+    Haz crecer tu negocio con nuestros préstamos a bajo interés
+  </h2>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl text-center md:text-left">
+    <div className="relative px-6">
+      <h3 className="text-xl font-semibold mb-3 text-red-600">
+        Tasas de interés bajas:
+      </h3>
+      <p className="text-gray-600">
+        Te ofrecemos las mejores condiciones del mercado para que puedas acceder
+        al capital que necesitas sin pagar de más.
+      </p>
+      <span className="hidden md:block absolute top-0 right-0 w-[3px] h-full bg-red-500"></span>
+    </div>
+
+    <div className="relative px-6">
+      <h3 className="text-xl font-semibold mb-3 text-red-600">
+        Requisitos flexibles:
+      </h3>
+      <p className="text-gray-600">
+        No te pedimos avales ni trámites complicados, solo lo necesario para evaluar tu solicitud.
+      </p>
+      <span className="hidden md:block absolute top-0 right-0 w-[3px] h-full bg-red-500"></span>
+    </div>
+    <div className="px-6 relative">
+      <h3 className="text-xl font-semibold mb-3 text-red-600">
+        Atención personalizada:
+      </h3>
+      <p className="text-gray-600">
+        Te acompañamos en todo el proceso y te asesoramos para que obtengas el préstamo
+        que mejor se adapte a tus necesidades.
+      </p>
+    </div>
+  </div>
+</section>
     </main>
   );
 }
