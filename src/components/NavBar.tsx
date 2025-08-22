@@ -2,7 +2,7 @@
 import React, {use, useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {FaPhone, FaCheck} from "react-icons/fa";
+import {FaPhone, FaCheck, FaMapMarked} from "react-icons/fa";
 import {motion, AnimatePresence} from "framer-motion";
 
 function NavBar() {
@@ -24,14 +24,14 @@ function NavBar() {
   return (
     <header className="flex items-center justify-evenly p-2 text-[2rem] shadow-md bg-white z-20">
 
-        <div className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-2">
             <Image src="/DeMoyaGroupProfile.png" alt="De Moya Group Perfil" width={300} height={300} className="w-[5rem]"></Image>
             <h1 className="font-bold">De Moya Group & Asociados</h1>
-        </div>
+        </Link>
 
         <nav>
             <ul className="flex space-x-4">
-                <Link href="/" className="group relative inline-block">
+                <Link href="/" className="group relative inline-block border-r-[#DE3933] border-r-[.2rem] pr-[1rem]">
                     <span className="transition-colors group-hover:text-[#DE3933]">
                         Inicio
                     </span>
@@ -40,7 +40,7 @@ function NavBar() {
                     />
                 </Link>
 
-                <Link href="/solicitar-prestamos" className="group relative inline-block">
+                <Link href="/solicitar-prestamos" className="group relative inline-block border-r-[#DE3933] border-r-[.2rem] pr-[1rem]">
                     <span className="transition-colors group-hover:text-[#DE3933]">
                         Solicitar Prestamo
                     </span>
@@ -86,7 +86,7 @@ function NavBar() {
                             transition={{duration : 0.3 }} 
                             className="flex items-center space-x-2"
                         >
-                            <FaPhone className="text-[1.5rem]"/>
+                            <FaPhone className="text-[1.5rem] rotate-90 text-[#DE3933]"/>
                             <span>+1 809-242-5777</span>
                         </motion.div>
                     )}
@@ -94,7 +94,24 @@ function NavBar() {
                 
                 
             </button>
+        </div>
+        <div className="flex items-center gap-8">
+            <Link 
+                href="https://maps.app.goo.gl/7h6yi6bqKBCsgfvL6"
+                className="flex items-center gap-4 text-white text-[1.5rem] bg-[#DE3933] px-4 py-2 rounded-[1rem] hover:bg-[#c32a2a] transition-colors duration-300"
+                target="_blank"
+            >
+                <div>
+                    <FaMapMarked/>
+                </div>
 
+                <span>La Vega</span>
+
+            </Link>
+            <p className="flex flex-col text-[1.3rem]">
+                <span>Calle Garcia Godoy Plaza Estella,</span> 
+                <span>La Vega, Dominican Republic 41000</span>
+            </p>
         </div>
     </header>
   );
