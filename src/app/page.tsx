@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
-import ScaleIn from "@/components/ScaleIn";
 
 
 

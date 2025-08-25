@@ -3,21 +3,6 @@ import React from "react";
 import CheckBoxComponent from "@/components/CheckBoxComponent";
 import ScaleIn from "@/components/ScaleIn";
 
-
-const MapComponent: React.FC = () => {
-  return (
-    <iframe
-      src="https://www.google.com/maps/embed/v1/place?key=TU_API_KEY&q=La+Vega+Dominican+Republic"
-      width="600"
-      height="450"
-      style={{ border: 0 }}
-      allowFullScreen
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-    />
-  );
-};
-
 function Page() {
 
     const estadoCivil = [
