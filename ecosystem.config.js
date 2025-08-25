@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
     // Configuración para el entorno de PRODUCCIÓN
-    name: "EddyLopez-prod", // Nombre del proceso en PM2
+    name: "DeMoyaGroup-prod", // Nombre del proceso en PM2
     script: "npm",                    // Usamos npm para ejecutar el script
     args: "run start",                // El comando "npm run start"
     env: {
