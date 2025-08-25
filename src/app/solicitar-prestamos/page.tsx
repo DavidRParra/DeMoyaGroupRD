@@ -157,7 +157,7 @@ function Page() {
                 </div>
 
                 {/* Referencias Familiares */}
-                <div className="flex flex-col w-full justify-between items-center">
+                <div className="flex flex-col w-full justify-between items-center border-red-500 border my-4 p-3 rounded-lg">
                     <label htmlFor="referencias-personales" className="text-red-500">3 Familiares que no vivan con usted*</label>
                     <div className="flex gap-[2%] w-full">
 
@@ -256,7 +256,7 @@ function Page() {
                 </div>
 
                 {/* Referencias Personales */}
-                <div className="flex flex-col w-full justify-between items-center">
+                <div className="flex flex-col w-full justify-between items-center border-red-500 border my-4 p-3 rounded-lg">
                     <label htmlFor="referencias-personales" className="text-red-500">3 referencias personales*</label>
 
                     <div className="flex gap-[2%] w-full">
@@ -319,7 +319,7 @@ function Page() {
                 </div>
 
                 {/* Referencias Comerciales */}
-                <div className="flex flex-col w-full justify-between items-center">
+                <div className="flex flex-col w-full justify-between items-center border-red-500 border my-4 p-3 rounded-lg">
                     <label htmlFor="referencias-personales" className="text-red-500">3 referencias Comerciales*</label>
 
                     <div className="flex gap-[2%] w-full">
