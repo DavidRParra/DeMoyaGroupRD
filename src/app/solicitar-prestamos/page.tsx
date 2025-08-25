@@ -158,7 +158,7 @@ function Page() {
 
                 {/* Referencias Familiares */}
                 <div className="flex flex-col w-full justify-between items-center">
-                    <label htmlFor="referencias-personales">3 Familiares que no vivan con usted*</label>
+                    <label htmlFor="referencias-personales" className="text-red-500">3 Familiares que no vivan con usted*</label>
                     <div className="flex gap-[2%] w-full">
 
                         <div className="w-[32%]">
@@ -257,7 +257,7 @@ function Page() {
 
                 {/* Referencias Personales */}
                 <div className="flex flex-col w-full justify-between items-center">
-                    <label htmlFor="referencias-personales">3 referencias personales*</label>
+                    <label htmlFor="referencias-personales" className="text-red-500">3 referencias personales*</label>
 
                     <div className="flex gap-[2%] w-full">
 
@@ -320,7 +320,7 @@ function Page() {
 
                 {/* Referencias Comerciales */}
                 <div className="flex flex-col w-full justify-between items-center">
-                    <label htmlFor="referencias-personales">3 referencias Comerciales*</label>
+                    <label htmlFor="referencias-personales" className="text-red-500">3 referencias Comerciales*</label>
 
                     <div className="flex gap-[2%] w-full">
 
@@ -395,7 +395,6 @@ function Page() {
 
                     </div>
                 </div>
-
 
                 <div className="flex justify-center items-center w-full">
                     <button type="submit" className="bg-[#DE3933] text-white px-4 py-2 rounded-lg hover:bg-[#c32a2a] transition-colors duration-300">
