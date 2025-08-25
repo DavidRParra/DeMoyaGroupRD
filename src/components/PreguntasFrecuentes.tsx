@@ -22,7 +22,7 @@ function PreguntasFrecuentes({preguntasRespuestas}: PreguntasFrecuentesProps) {
         <div className="flex flex-col items-center gap-8 px-8 py-16 space-y-6 w-full">
             
             <div className="w-[40%]">
-                <h2 className="text-[3rem] font-bold text-gray-900 mb-4">Preguntas Frecuentes</h2>
+                <h2 className="text-[3rem] font-bold text-red-500 mb-4">Preguntas Frecuentes</h2>
                 {preguntasRespuestas.map((item , index ) => (
                     <div key={index} className="flex flex-col mb-6 w-full">
 

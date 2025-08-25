@@ -36,14 +36,14 @@ function Page() {
     ];
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gray-100 z-10">
-        <div className="flex flex-col items-center mt-10">
-            <h1 className="text-[3.5rem]">Formulario Para Solicitud de Prestamos</h1>
+    <div className=" flex flex-col items-center bg-gray-100 z-10">
+        <div className="flex flex-col items-center">
+            <h1 className="text-[3.5rem] text-red-500">Formulario Para Solicitud de Prestamos</h1>
             <p className="text-[2rem]">Completa el formulario y nos pondremos en contacto</p>
         </div>
 
         
-        <form action="" className="flex flex-col space-y-4 my-10 w-[70%] text-[1.4rem] border p-6">
+        <form action="" className="flex flex-col space-y-4 my-10 w-[70%] text-[1.4rem] border border-red-500 p-6">
             <ScaleIn>
                 <div className="flex w-full justify-between items-end">
 
@@ -412,7 +412,7 @@ function Page() {
                 </div>
 
 
-                <div className="flex justify-center items-center w-full my-[2rem]">
+                <div className="flex justify-center items-center w-full">
                     <button type="submit" className="bg-[#DE3933] text-white px-4 py-2 rounded-lg hover:bg-[#c32a2a] transition-colors duration-300">
                         Enviar Solicitud
                     </button>

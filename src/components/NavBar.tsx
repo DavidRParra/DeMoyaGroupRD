@@ -31,16 +31,9 @@ function NavBar() {
 
         <nav>
             <ul className="flex space-x-4">
-                <Link href="/" className="group relative inline-block border-r-[#DE3933] border-r-[.2rem] pr-[1rem]">
-                    <span className="transition-colors group-hover:text-[#DE3933]">
-                        Inicio
-                    </span>
-                    <span
-                        className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-[#DE3933] transition-all duration-300 group-hover:w-full group-hover:left-0"
-                    />
-                </Link>
+                
 
-                <Link href="/solicitar-prestamos" className="group relative inline-block border-r-[#DE3933] border-r-[.2rem] pr-[1rem]">
+                <Link href="/solicitar-prestamos" className="group relative inline-block ">
                     <span className="transition-colors group-hover:text-[#DE3933]">
                         Solicitar Prestamo
                     </span>
@@ -49,9 +42,39 @@ function NavBar() {
                     />
                 </Link>
 
-                <Link href="#" className="group relative inline-block">
+                <span className="bg-[#DE3933] w-[.2rem]"/>
+
+                <Link href="/nosotros" className="group relative inline-block">
                     <span className="transition-colors group-hover:text-[#DE3933]">
                         Nosotros
+                    </span>
+                    <span
+                        className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-[#DE3933] transition-all duration-300 group-hover:w-full group-hover:left-0"
+                    />
+                </Link>
+
+                <span className="bg-[#DE3933] w-[.2rem]"/>
+
+                
+
+                
+
+                <Link href="/preguntas-frecuentes" className="group relative inline-block">
+                    <span className="transition-colors group-hover:text-[#DE3933]">
+                        Preguntas Frecuentes
+                    </span>
+                    <span
+                        className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-[#DE3933] transition-all duration-300 group-hover:w-full group-hover:left-0"
+                    />
+                </Link>
+
+
+                <span className="bg-[#DE3933] w-[.2rem]"/>
+
+                
+                <Link href="/quienes-somos" className="group relative inline-block">
+                    <span className="transition-colors group-hover:text-[#DE3933]">
+                        Quienes Somos
                     </span>
                     <span
                         className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-[#DE3933] transition-all duration-300 group-hover:w-full group-hover:left-0"
@@ -108,7 +131,7 @@ function NavBar() {
                 <span>La Vega</span>
 
             </Link>
-            <p className="flex flex-col text-[1.3rem]">
+            <p className="flex flex-col text-[1rem]">
                 <span>Calle Garcia Godoy Plaza Estella,</span> 
                 <span>La Vega, Dominican Republic 41000</span>
             </p>
