@@ -21,7 +21,7 @@ function Page() {
     ];
 
   return (
-    <div className=" flex flex-col items-center bg-gray-100 z-10">
+    <div className=" flex flex-col items-center bg-gray-100 z-10 min-h-screen w-full">
         <div className="flex flex-col items-center">
             <h1 className="text-[3.5rem] text-red-500">Formulario Para Solicitud de Prestamos</h1>
             <p className="text-[2rem]">Completa el formulario y nos pondremos en contacto</p>

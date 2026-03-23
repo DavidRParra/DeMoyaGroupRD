@@ -133,7 +133,7 @@ export default function Home() {
             width={200}
             height={200}
             className="w-[10rem] h-auto object-cover rounded-full shadow-md"/>
-            <p>Presentamos</p>
+            <p>Prestamos</p>
             
           
         </Link>

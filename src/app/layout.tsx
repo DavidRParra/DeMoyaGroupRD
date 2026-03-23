@@ -24,14 +24,15 @@ export default function RootLayout({
   return (
     <html lang="ES">
       <body
-        className={roboto.className}
+        className={`${roboto.className} min-h-screen flex flex-col`}
       >
 
         <SocialMedia />
 
         <NavBar/>
-
-        {children}
+        <main className="flex-1">
+            {children}
+        </main>
 
         <Footer />
       </body>

@@ -128,7 +128,7 @@ function NavBar() {
                     <FaMapMarked/>
                 </div>
 
-                <span>La Vega</span>
+                <span>Localización</span>
 
             </Link>
             <p className="flex flex-col text-[1rem]">
