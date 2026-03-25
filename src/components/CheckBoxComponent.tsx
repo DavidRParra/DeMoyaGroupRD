@@ -1,7 +1,6 @@
 'use client';
 import React, { useState } from "react";
 
-
 interface Option {
     label: string;
     value: string;
@@ -9,14 +8,18 @@ interface Option {
 
 interface CheckBoxComponentProps {
     options: Option[];
+    onChange: (value: string) => void; 
 }
 
-function CheckBoxComponent({options}: CheckBoxComponentProps) {
+function CheckBoxComponent({ options, onChange }: CheckBoxComponentProps) {
 
     const [selectedOptions, setSelectedOptions] = useState<string | null>(null);
 
-    const handleChange = (value : string) => {
-        setSelectedOptions(prev => (prev === value ? null : value));
+    const handleChange = (value: string) => {
+        const newValue = selectedOptions === value ? "" : value;
+        setSelectedOptions(newValue || null);
+        
+        onChange(newValue); 
     }
 
     return (
@@ -38,7 +41,6 @@ function CheckBoxComponent({options}: CheckBoxComponentProps) {
             ))}
         </div>
     )
-
 }
 
 export default CheckBoxComponent;
