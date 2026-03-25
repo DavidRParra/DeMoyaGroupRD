@@ -181,7 +181,7 @@ function Page() {
                             <CheckBoxComponent options={vivienda} onChange={(val: string) => setFormData(p => ({...p, appointment: {...p.appointment, vivienda: val}}))}/>
                         </div>
                         <div className="flex flex-col w-[15%]">
-                            <label htmlFor="inicio-vivir">Inició a vivir*</label>
+                            <label htmlFor="inicio-vivir">Fecha de nacimiento*</label>
                             <input required type="date" id="inicio-vivir" className="border rounded-lg px-2" value={formData.appointment.inicioVivienda} onChange={handleAppointmentChange}/>
                         </div>
                         <div className="flex flex-col w-[15%]">
