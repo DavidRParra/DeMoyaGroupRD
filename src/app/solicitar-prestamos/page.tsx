@@ -72,7 +72,6 @@ function Page() {
     };
 
     const handleRefChange = (type: 'familiares' | 'personales' | 'comerciales', index: number, field: string, value: string) => {
-        // CORRECCIÓN: Tipado explícito para evitar el error "Unexpected any"
         const newRefs = [...formData[type]] as (FamilyReference | PersonalReference | ComercyReference)[];
         const finalValue = field === 'phoneNumber' ? (parseInt(value) || 0) : value;
         
@@ -85,7 +84,7 @@ function Page() {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8080/appointments/full/create', {
+            const response = await fetch('http://localhost:8080/api/loa/appointments/full/create', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -97,7 +96,7 @@ function Page() {
                 const errorText = await response.text();
                 alert("Error: " + errorText);
             }
-        } catch (_err) { // CORRECCIÓN: Guion bajo para evitar el error de variable no usada
+        } catch (_err) {
             alert("Error de conexión con el servidor");
         }
     };
