@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 function Page() {
-    // Puedes actualizar los nombres y cargos de tu personal aquí mismo
     const personal = [
         { nombre: "Juan de Moya", cargo: "CEO & Fundador", imagen: "/Quienes_Somos.jpg" },
         { nombre: "María Pérez", cargo: "Directora Financiera", imagen: "/Quienes_Somos.jpg" },
@@ -15,7 +14,6 @@ function Page() {
                 Nuestro Personal
             </h3>
 
-            {/* Contenedor adaptativo: Columna en móvil, 2 columnas en tablets, 4 en escritorio */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-[1300px] justify-items-center">
                 {personal.map((persona, index) => (
                     <div 

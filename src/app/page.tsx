@@ -6,7 +6,6 @@ export default function Home() {
   return (
     <main className="flex flex-col justify-center min-h-screen py-10 md:py-0">
 
-      {/* Sección del Marquee / Carrusel de ayudas */}
       <FadeIn>
         <section className="relative overflow-hidden bg-gray-200 py-8 md:py-12 mt-[-2rem] md:mt-[-5rem]">
           <h2 className="w-full text-center mb-6 md:mb-[3rem] text-[#DE3933] font-semibold text-[2rem] md:text-[3rem] px-4">
@@ -70,14 +69,12 @@ export default function Home() {
         </section>
       </FadeIn>
 
-      {/* Sección de Beneficios / Negocio */}
       <FadeIn>
         <section className="flex flex-col items-center justify-center w-full px-4 md:px-0 py-8">
           <h2 className="font-bold text-center text-gray-900 text-[1.5rem] md:text-[2rem] mb-8 md:mb-12 my-6">
             Haz crecer tu negocio con nuestros préstamos a bajo interés
           </h2>
 
-          {/* Se apila en columna en móviles (w-full) y pasa a fila de 3 columnas en pantallas md en adelante */}
           <div className="flex flex-col md:flex-row w-full md:w-[70%] gap-8 md:gap-[2%] justify-center items-stretch md:items-start mb-12">
 
             <div className="w-full md:w-[30%] border-b-2 md:border-b-0 md:border-r-[.2rem] border-red-500 pb-6 md:pb-0 md:pr-10">
@@ -113,7 +110,6 @@ export default function Home() {
         </section>
       </FadeIn>
       
-      {/* Sección de Enlaces Rápidos / Historias */}
       <div className="flex flex-wrap gap-6 md:gap-[3rem] text-[1.2rem] md:text-[2rem] justify-center items-center my-6 md:my-[2rem] px-4">
         <Link href="/solicitar-prestamos" className="flex flex-col items-center gap-3">
           <Image

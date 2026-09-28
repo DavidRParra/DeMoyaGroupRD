@@ -12,8 +12,7 @@ const FadeIn = ({ children, delay = 0 }: FadeInProps) => {
   const domRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Añadimos un rootMargin para que el observador detecte el elemento 
-    // antes de que siquiera aparezca en la ventana (precarga visual)
+
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
@@ -23,7 +22,7 @@ const FadeIn = ({ children, delay = 0 }: FadeInProps) => {
           }
         });
       },
-      { rootMargin: '200px' } // Activa la animación un poco antes de llegar
+      { rootMargin: '200px' }
     );
 
     const currentElement = domRef.current;

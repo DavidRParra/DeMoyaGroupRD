@@ -36,7 +36,6 @@ function NavBar() {
         </Link>
 
         <div className="relative flex items-center justify-between">
-            {/* Botón Hamburguesa para activar el menú en pantallas pequeñas */}
             <button
                 onClick={() => setMenuAbierto(!menuAbierto)}
                 className="p-2 text-[2rem] text-gray-800 focus:outline-none cursor-pointer flex lg:hidden items-center justify-center"
@@ -45,7 +44,6 @@ function NavBar() {
                 {menuAbierto ? <FaTimes /> : <FaBars />}
             </button>
 
-            {/* Menú para Escritorio (Siempre visible en lg, oculto en móviles) */}
             <div className="hidden lg:flex items-center space-x-8">
                 <nav>
                     <ul className="flex items-center space-x-4">
@@ -79,7 +77,6 @@ function NavBar() {
                     </ul>
                 </nav>
 
-                {/* Botón de Teléfono / Copiar */}
                 <div className="w-[20rem]">
                     <button onClick={handleCopy} className="flex items-center hover:bg-gray-100 cursor-pointer justify-center w-full space-x-2 px-4 py-2 border rounded-lg">
                         <AnimatePresence mode="wait">
@@ -112,7 +109,6 @@ function NavBar() {
                     </button>
                 </div>
 
-                {/* Sección de Localización */}
                 <div className="flex items-center gap-4">
                     <Link 
                         href="https://maps.app.goo.gl/7h6yi6bqKBCsgfvL6"
@@ -128,7 +124,6 @@ function NavBar() {
                 </div>
             </div>
 
-            {/* Menú Desplegable para Móviles (Animado con AnimatePresence) */}
             <AnimatePresence>
                 {menuAbierto && (
                     <motion.div

@@ -19,7 +19,6 @@ function PreguntasFrecuentes({ preguntasRespuestas }: PreguntasFrecuentesProps) 
 
     return (
         <div className="flex flex-col items-center gap-6 px-4 md:px-8 py-10 w-full">
-            {/* Contenedor principal adaptable para que no se quede apretado en el 40% */}
             <div className="w-full max-w-[800px] flex flex-col items-center">
                 <h2 className="text-[2.2rem] md:text-[3rem] font-bold text-red-500 mb-8 text-center">
                     Preguntas Frecuentes

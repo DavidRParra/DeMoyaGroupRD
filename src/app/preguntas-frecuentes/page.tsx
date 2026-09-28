@@ -19,14 +19,12 @@ export default function PreguntasFrecuentesPage() {
 
     return (
         <section className="flex flex-col items-center w-full min-h-screen p-4 md:p-8 gap-8">
-            {/* Contenedor de Preguntas ampliado a w-full para evitar que se compriman */}
             <div className="w-full max-w-[900px] flex flex-col items-center">
                 <div className="w-full">
                     <PreguntasFrecuentes preguntasRespuestas={preguntasRespuestas} />
                 </div>
             </div>
 
-            {/* Contenedor de publicaciones de Instagram adaptativo */}
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 w-full max-w-[1200px] pb-10">
                 <div className="w-full max-w-[350px] md:max-w-[400px]">
                     <Image 
