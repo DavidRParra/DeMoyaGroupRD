@@ -12,22 +12,28 @@ const FadeIn = ({ children, delay = 0 }: FadeInProps) => {
   const domRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      });
-    });
+    // Añadimos un rootMargin para que el observador detecte el elemento 
+    // antes de que siquiera aparezca en la ventana (precarga visual)
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '200px' } // Activa la animación un poco antes de llegar
+    );
 
-    if (domRef.current) {
-      observer.observe(domRef.current);
+    const currentElement = domRef.current;
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      if (domRef.current) {
-        observer.unobserve(domRef.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, []);
@@ -38,7 +44,7 @@ const FadeIn = ({ children, delay = 0 }: FadeInProps) => {
       style={{ transitionDelay: `${delay}ms` }}
       className={`
         transform transition-all duration-1000 ease-out origin-center
-        ${isVisible ? 'opacity-100 scale-[100%]' : 'opacity-0 scale-0'}
+        ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}
       `}
     >
       {children}

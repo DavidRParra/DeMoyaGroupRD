@@ -75,7 +75,6 @@ function Page() {
         const newRefs = [...formData[type]] as (FamilyReference | PersonalReference | ComercyReference)[];
         const finalValue = field === 'phoneNumber' ? (parseInt(value) || 0) : value;
         
-        
         newRefs[index] = { ...newRefs[index], [field]: finalValue };
         
         setFormData(prev => ({ ...prev, [type]: newRefs }));
@@ -107,61 +106,66 @@ function Page() {
     const propietarioNegocio = [{ label: "Si", value: "si" }, { label: "No", value: "no" }];
 
     return (
-        <div className="flex flex-col items-center bg-gray-100 z-10 min-h-screen w-full">
-            <div className="flex flex-col items-center">
-                <h1 className="text-[3.5rem] text-red-500">Formulario Para Solicitud de Prestamos</h1>
-                <p className="text-[2rem]">Completa el formulario y nos pondremos en contacto</p>
+        <div className="flex flex-col items-center bg-gray-100 z-10 min-h-screen w-full py-10 px-4">
+            <div className="flex flex-col items-center text-center mb-6">
+                <h1 className="text-[2.2rem] md:text-[3.5rem] text-red-500 font-bold leading-tight">
+                    Formulario Para Solicitud de Prestamos
+                </h1>
+                <p className="text-[1.2rem] md:text-[2rem] text-gray-700 mt-2">
+                    Completa el formulario y nos pondremos en contacto
+                </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="flex flex-col space-y-4 my-10 w-[70%] text-[1.4rem] border border-red-500 p-6">
+            <form onSubmit={handleSubmit} className="flex flex-col space-y-6 w-full max-w-[1200px] text-[1.1rem] md:text-[1.4rem] border border-red-500 bg-white p-4 md:p-8 rounded-2xl shadow-lg">
                 <ScaleIn>
+                    
                     {/* SECCION 1 */}
-                    <div className="flex w-full justify-between items-end">
-                        <div className="flex w-[75%] justify-between ">
-                            <div className="flex flex-col w-[24%]">
+                    <div className="flex flex-col lg:flex-row w-full justify-between items-start lg:items-end gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full lg:w-[75%]">
+                            <div className="flex flex-col w-full">
                                 <label htmlFor="nombre">Nombre*:</label>
-                                <input required id="nombre" type="text" className="border rounded-lg px-2" value={formData.appointment.nombre} onChange={handleAppointmentChange}/>
+                                <input required id="nombre" type="text" className="border rounded-lg px-3 py-2 w-full" value={formData.appointment.nombre} onChange={handleAppointmentChange}/>
                             </div>
-                            <div className="flex flex-col w-[24%]">
+                            <div className="flex flex-col w-full">
                                 <label htmlFor="apellido">Apellidos*:</label>
-                                <input required id="apellido" type="text" className="border rounded-lg px-2" value={formData.appointment.apellidos} onChange={handleAppointmentChange}/>
+                                <input required id="apellido" type="text" className="border rounded-lg px-3 py-2 w-full" value={formData.appointment.apellidos} onChange={handleAppointmentChange}/>
                             </div>
-                            <div className="flex flex-col w-[24%]">
+                            <div className="flex flex-col w-full">
                                 <label htmlFor="apodo">Apodo:</label>
-                                <input id="apodo" type="text" className="border rounded-lg px-2" value={formData.appointment.apodo} onChange={handleAppointmentChange}/>
+                                <input id="apodo" type="text" className="border rounded-lg px-3 py-2 w-full" value={formData.appointment.apodo} onChange={handleAppointmentChange}/>
                             </div>
-                            <div className="flex flex-col w-[24%]">
+                            <div className="flex flex-col w-full">
                                 <label htmlFor="cedula">Cedula*:</label>
-                                <input required id="cedula" type="text" className="border rounded-lg px-2" value={formData.appointment.cedula} onChange={handleAppointmentChange}/>
+                                <input required id="cedula" type="text" className="border rounded-lg px-3 py-2 w-full" value={formData.appointment.cedula} onChange={handleAppointmentChange}/>
                             </div>
                         </div>
-                        <div className="flex justify-center gap-6 items-center w-[25%]">
-                            <p>Estado Civil:</p>
+                        <div className="flex justify-start lg:justify-center gap-4 items-center w-full lg:w-[25%] mt-2 lg:mt-0">
+                            <p className="font-medium">Estado Civil:</p>
                             <CheckBoxComponent options={estadoCivil} onChange={(val: string) => setFormData(p => ({...p, appointment: {...p.appointment, estadoCivil: val}}))}/>
                         </div>
                     </div>
 
                     {/* SECCION 2 */}
-                    <div className="flex w-full justify-between mt-4">
-                        <div className="flex flex-col w-[15%]">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 w-full mt-6">
+                        <div className="flex flex-col w-full">
                             <label htmlFor="telefono">Telefono</label>
-                            <input required id="telefono" type="text" className="border rounded-lg px-2" value={formData.appointment.telefono} onChange={handleAppointmentChange}/>
+                            <input required id="telefono" type="text" className="border rounded-lg px-3 py-2 w-full" value={formData.appointment.telefono} onChange={handleAppointmentChange}/>
                         </div>
-                        <div className="flex flex-col w-[15%]">
+                        <div className="flex flex-col w-full">
                             <label htmlFor="cell">Celular</label>
-                            <input required id="cell" type="text" className="border rounded-lg px-2" value={formData.appointment.celular} onChange={handleAppointmentChange}/>
+                            <input required id="cell" type="text" className="border rounded-lg px-3 py-2 w-full" value={formData.appointment.celular} onChange={handleAppointmentChange}/>
                         </div>
-                        <div className="flex flex-col w-[30%]">
+                        <div className="flex flex-col w-full sm:col-span-2 lg:col-span-1">
                             <label htmlFor="Correo">E-Mail</label>
-                            <input id="Correo" type="email" className="border rounded-lg px-2" value={formData.appointment.email} onChange={handleAppointmentChange}/>
+                            <input id="Correo" type="email" className="border rounded-lg px-3 py-2 w-full" value={formData.appointment.email} onChange={handleAppointmentChange}/>
                         </div>
-                        <div className="flex flex-col w-[15%]">
+                        <div className="flex flex-col w-full">
                             <label htmlFor="ciudad">Ciudad</label>
-                            <input id="ciudad" type="text" className="border rounded-lg px-2" value={formData.appointment.ciudad} onChange={handleAppointmentChange}/>
+                            <input id="ciudad" type="text" className="border rounded-lg px-3 py-2 w-full" value={formData.appointment.ciudad} onChange={handleAppointmentChange}/>
                         </div>
-                        <div className="flex flex-col w-[20%]">
+                        <div className="flex flex-col w-full">
                             <label htmlFor="tipo-prestamo">Tipo de Prestamo*</label>
-                            <select required id="tipo-prestamo" className="border rounded-lg px-2" value={formData.appointment.tipoPrestamo} onChange={handleAppointmentChange}>
+                            <select required id="tipo-prestamo" className="border rounded-lg px-3 py-2 w-full bg-white" value={formData.appointment.tipoPrestamo} onChange={handleAppointmentChange}>
                                 <option value="personal">Personal</option>
                                 <option value="negocios">Negocios</option>
                                 <option value="vehiculo">Vehículo</option>
@@ -170,106 +174,106 @@ function Page() {
                     </div>
 
                     {/* SECCION 3 */}
-                    <div className="flex w-full justify-between items-end mt-4">
-                        <div className="flex flex-col w-[15%]">
+                    <div className="flex flex-col lg:flex-row w-full justify-between items-start lg:items-end gap-4 mt-6">
+                        <div className="flex flex-col w-full lg:w-[15%]">
                             <label htmlFor="monto-solicitado">Monto (DOP)*</label>
-                            <input required type="number" id="monto-solicitado" className="border rounded-lg px-2" value={formData.appointment.monto} onChange={handleAppointmentChange}/>
+                            <input required type="number" id="monto-solicitado" className="border rounded-lg px-3 py-2 w-full" value={formData.appointment.monto} onChange={handleAppointmentChange}/>
                         </div>
-                        <div className="flex justify-center gap-6 items-center w-[25%]">
-                            <p>Vivienda*</p>
+                        <div className="flex justify-start lg:justify-center gap-4 items-center w-full lg:w-[25%]">
+                            <p className="font-medium">Vivienda*</p>
                             <CheckBoxComponent options={vivienda} onChange={(val: string) => setFormData(p => ({...p, appointment: {...p.appointment, vivienda: val}}))}/>
                         </div>
-                        <div className="flex flex-col w-[15%]">
+                        <div className="flex flex-col w-full lg:w-[15%]">
                             <label htmlFor="inicio-vivir">Fecha de nacimiento*</label>
-                            <input required type="date" id="inicio-vivir" className="border rounded-lg px-2" value={formData.appointment.inicioVivienda} onChange={handleAppointmentChange}/>
+                            <input required type="date" id="inicio-vivir" className="border rounded-lg px-3 py-2 w-full" value={formData.appointment.inicioVivienda} onChange={handleAppointmentChange}/>
                         </div>
-                        <div className="flex flex-col w-[15%]">
+                        <div className="flex flex-col w-full lg:w-[15%]">
                             <label htmlFor="profecion">Profesión*</label>  
-                            <input required type="text" id="profecion" className="border rounded-lg px-2" value={formData.appointment.profesion} onChange={handleAppointmentChange}/>
+                            <input required type="text" id="profecion" className="border rounded-lg px-3 py-2 w-full" value={formData.appointment.profesion} onChange={handleAppointmentChange}/>
                         </div>
-                        <div className="flex justify-center gap-6 items-center w-[25%]">
-                            <p>Negocio propio*</p>
+                        <div className="flex justify-start lg:justify-center gap-4 items-center w-full lg:w-[25%]">
+                            <p className="font-medium">Negocio propio*</p>
                             <CheckBoxComponent options={propietarioNegocio} onChange={(val: string) => setFormData(p => ({...p, appointment: {...p.appointment, negocioPropio: val}}))}/>
                         </div>
                     </div>
 
                     {/* SECCION 4 */}
-                    <div className="flex w-full justify-between items-end mt-4">
-                        <div className="flex flex-col w-[15%]">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 w-full mt-6 items-end">
+                        <div className="flex flex-col w-full">
                             <label htmlFor="tiempo-negocio">Tiempo Negocio</label>
-                            <input type="text" id="tiempo-negocio" className="border rounded-lg px-2" value={formData.appointment.tiempoNegocio} onChange={handleAppointmentChange}/>
+                            <input type="text" id="tiempo-negocio" className="border rounded-lg px-3 py-2 w-full" value={formData.appointment.tiempoNegocio} onChange={handleAppointmentChange}/>
                         </div>
-                        <div className="flex flex-col w-[15%]">
+                        <div className="flex flex-col w-full">
                             <label htmlFor="dependiente">Dependientes*</label>
-                            <input required type="number" id="dependiente" className="border rounded-lg px-2" value={formData.appointment.dependientes} onChange={handleAppointmentChange}/>
+                            <input required type="number" id="dependiente" className="border rounded-lg px-3 py-2 w-full" value={formData.appointment.dependientes} onChange={handleAppointmentChange}/>
                         </div>
-                        <div className="flex flex-col w-[15%]">
+                        <div className="flex flex-col w-full">
                             <label htmlFor="esposa-trabajo">Esposa o Trabajo*</label>
-                            <input required type="text" id="esposa-trabajo" className="border rounded-lg px-2" value={formData.appointment.esposoTrabajo} onChange={handleAppointmentChange}/>
+                            <input required type="text" id="esposa-trabajo" className="border rounded-lg px-3 py-2 w-full" value={formData.appointment.esposoTrabajo} onChange={handleAppointmentChange}/>
                         </div>
-                        <div className="flex flex-col w-[15%]">
+                        <div className="flex flex-col w-full">
                             <label htmlFor="telefonos">Teléfonos*</label>
-                            <input required type="text" id="telefonos" className="border rounded-lg px-2" value={formData.appointment.telefonos} onChange={handleAppointmentChange}/>
+                            <input required type="text" id="telefonos" className="border rounded-lg px-3 py-2 w-full" value={formData.appointment.telefonos} onChange={handleAppointmentChange}/>
                         </div>
-                        <div className="flex flex-col w-[35%]">
+                        <div className="flex flex-col w-full sm:col-span-2 lg:col-span-1">
                             <label>Cuenta Bancaria*</label>
                             <div className="flex gap-2 w-full">
-                                <input required type="text" id="banco" placeholder="Banco" className="border rounded-lg px-2 w-[50%]" value={formData.appointment.banco} onChange={handleAppointmentChange}/>
-                                <input required type="text" id="numero-cuenta" placeholder="Cuenta" className="border rounded-lg px-2 w-[50%]" value={formData.appointment.cuenta} onChange={handleAppointmentChange}/>
+                                <input required type="text" id="banco" placeholder="Banco" className="border rounded-lg px-2 py-2 w-[50%]" value={formData.appointment.banco} onChange={handleAppointmentChange}/>
+                                <input required type="text" id="numero-cuenta" placeholder="Cuenta" className="border rounded-lg px-2 py-2 w-[50%]" value={formData.appointment.cuenta} onChange={handleAppointmentChange}/>
                             </div>
                         </div>
                     </div>
 
                     {/* REFERENCIAS FAMILIARES */}
-                    <div className="flex flex-col w-full border-red-500 border my-4 p-3 rounded-lg">
-                        <label className="text-red-500 self-center">3 Familiares que no vivan con usted*</label>
-                        <div className="flex gap-[2%] w-full">
+                    <div className="flex flex-col w-full border-red-500 border my-6 p-4 rounded-xl">
+                        <label className="text-red-500 font-semibold self-center text-center mb-4">3 Familiares que no vivan con usted*</label>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
                             {formData.familiares.map((ref, i) => (
-                                <div key={i} className="w-[32%]">
-                                    <label>Familiar {i+1}*</label>
-                                    <input required type="text" placeholder="Nombre" className="border rounded-lg px-2 w-full mb-1" value={ref.firstName} onChange={(e) => handleRefChange('familiares', i, 'firstName', e.target.value)}/>
-                                    <input required type="text" placeholder="Apellido" className="border rounded-lg px-2 w-full mb-1" value={ref.lastName} onChange={(e) => handleRefChange('familiares', i, 'lastName', e.target.value)}/>
-                                    <input required type="number" placeholder="Telefono" className="border rounded-lg px-2 w-full mb-1" value={ref.phoneNumber || ''} onChange={(e) => handleRefChange('familiares', i, 'phoneNumber', e.target.value)}/>
-                                    <input required type="text" placeholder="Direccion" className="border rounded-lg px-2 w-full mb-1" value={ref.field1} onChange={(e) => handleRefChange('familiares', i, 'field1', e.target.value)}/>
-                                    <input required type="text" placeholder="Parentesco" className="border rounded-lg px-2 w-full" value={ref.relationshipClient} onChange={(e) => handleRefChange('familiares', i, 'relationshipClient', e.target.value)}/>
+                                <div key={i} className="flex flex-col gap-2 p-3 border rounded-lg bg-gray-50">
+                                    <label className="font-medium text-gray-700">Familiar {i+1}*</label>
+                                    <input required type="text" placeholder="Nombre" className="border rounded-lg px-3 py-2 w-full bg-white" value={ref.firstName} onChange={(e) => handleRefChange('familiares', i, 'firstName', e.target.value)}/>
+                                    <input required type="text" placeholder="Apellido" className="border rounded-lg px-3 py-2 w-full bg-white" value={ref.lastName} onChange={(e) => handleRefChange('familiares', i, 'lastName', e.target.value)}/>
+                                    <input required type="number" placeholder="Telefono" className="border rounded-lg px-3 py-2 w-full bg-white" value={ref.phoneNumber || ''} onChange={(e) => handleRefChange('familiares', i, 'phoneNumber', e.target.value)}/>
+                                    <input required type="text" placeholder="Direccion" className="border rounded-lg px-3 py-2 w-full bg-white" value={ref.field1} onChange={(e) => handleRefChange('familiares', i, 'field1', e.target.value)}/>
+                                    <input required type="text" placeholder="Parentesco" className="border rounded-lg px-3 py-2 w-full bg-white" value={ref.relationshipClient} onChange={(e) => handleRefChange('familiares', i, 'relationshipClient', e.target.value)}/>
                                 </div>
                             ))}
                         </div>
                     </div>
 
                     {/* REFERENCIAS PERSONALES */}
-                    <div className="flex flex-col w-full border-red-500 border my-4 p-3 rounded-lg">
-                        <label className="text-red-500 self-center">3 Referencias Personales*</label>
-                        <div className="flex gap-[2%] w-full">
+                    <div className="flex flex-col w-full border-red-500 border my-6 p-4 rounded-xl">
+                        <label className="text-red-500 font-semibold self-center text-center mb-4">3 Referencias Personales*</label>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
                             {formData.personales.map((ref, i) => (
-                                <div key={i} className="w-[32%]">
-                                    <label>Referencia {i+1}*</label>
-                                    <input required type="text" placeholder="Nombre" className="border rounded-lg px-2 w-full mb-1" value={ref.firstName} onChange={(e) => handleRefChange('personales', i, 'firstName', e.target.value)}/>
-                                    <input required type="text" placeholder="Apellido" className="border rounded-lg px-2 w-full mb-1" value={ref.lastName} onChange={(e) => handleRefChange('personales', i, 'lastName', e.target.value)}/>
-                                    <input required type="number" placeholder="Telefono" className="border rounded-lg px-2 w-full" value={ref.phoneNumber || ''} onChange={(e) => handleRefChange('personales', i, 'phoneNumber', e.target.value)}/>
+                                <div key={i} className="flex flex-col gap-2 p-3 border rounded-lg bg-gray-50">
+                                    <label className="font-medium text-gray-700">Referencia {i+1}*</label>
+                                    <input required type="text" placeholder="Nombre" className="border rounded-lg px-3 py-2 w-full bg-white" value={ref.firstName} onChange={(e) => handleRefChange('personales', i, 'firstName', e.target.value)}/>
+                                    <input required type="text" placeholder="Apellido" className="border rounded-lg px-3 py-2 w-full bg-white" value={ref.lastName} onChange={(e) => handleRefChange('personales', i, 'lastName', e.target.value)}/>
+                                    <input required type="number" placeholder="Telefono" className="border rounded-lg px-3 py-2 w-full bg-white" value={ref.phoneNumber || ''} onChange={(e) => handleRefChange('personales', i, 'phoneNumber', e.target.value)}/>
                                 </div>
                             ))}
                         </div>
                     </div>
 
                     {/* REFERENCIAS COMERCIALES */}
-                    <div className="flex flex-col w-full border-red-500 border my-4 p-3 rounded-lg">
-                        <label className="text-red-500 self-center">3 Referencias Comerciales*</label>
-                        <div className="flex gap-[2%] w-full">
+                    <div className="flex flex-col w-full border-red-500 border my-6 p-4 rounded-xl">
+                        <label className="text-red-500 font-semibold self-center text-center mb-4">3 Referencias Comerciales*</label>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
                             {formData.comerciales.map((ref, i) => (
-                                <div key={i} className="w-[32%]">
-                                    <label>Referencia {i+1}*</label>
-                                    <input required type="text" placeholder="Empresa" className="border rounded-lg px-2 w-full mb-1" value={ref.company} onChange={(e) => handleRefChange('comerciales', i, 'company', e.target.value)}/>
-                                    <input required type="text" placeholder="Contacto" className="border rounded-lg px-2 w-full mb-1" value={ref.contact} onChange={(e) => handleRefChange('comerciales', i, 'contact', e.target.value)}/>
-                                    <input required type="text" placeholder="Cargo" className="border rounded-lg px-2 w-full mb-1" value={ref.positionRef} onChange={(e) => handleRefChange('comerciales', i, 'positionRef', e.target.value)}/>
-                                    <input required type="number" placeholder="Telefono" className="border rounded-lg px-2 w-full" value={ref.phoneNumber || ''} onChange={(e) => handleRefChange('comerciales', i, 'phoneNumber', e.target.value)}/>
+                                <div key={i} className="flex flex-col gap-2 p-3 border rounded-lg bg-gray-50">
+                                    <label className="font-medium text-gray-700">Referencia {i+1}*</label>
+                                    <input required type="text" placeholder="Empresa" className="border rounded-lg px-3 py-2 w-full bg-white" value={ref.company} onChange={(e) => handleRefChange('comerciales', i, 'company', e.target.value)}/>
+                                    <input required type="text" placeholder="Contacto" className="border rounded-lg px-3 py-2 w-full bg-white" value={ref.contact} onChange={(e) => handleRefChange('comerciales', i, 'contact', e.target.value)}/>
+                                    <input required type="text" placeholder="Cargo" className="border rounded-lg px-3 py-2 w-full bg-white" value={ref.positionRef} onChange={(e) => handleRefChange('comerciales', i, 'positionRef', e.target.value)}/>
+                                    <input required type="number" placeholder="Telefono" className="border rounded-lg px-3 py-2 w-full bg-white" value={ref.phoneNumber || ''} onChange={(e) => handleRefChange('comerciales', i, 'phoneNumber', e.target.value)}/>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    <div className="flex justify-center items-center w-full mt-6">
-                        <button type="submit" className="bg-[#DE3933] text-white px-8 py-3 rounded-lg hover:bg-[#c32a2a] transition-colors duration-300 text-[1.6rem]">
+                    <div className="flex justify-center items-center w-full mt-8">
+                        <button type="submit" className="bg-[#DE3933] text-white px-8 py-3 rounded-xl hover:bg-[#c32a2a] transition-colors duration-300 text-[1.4rem] font-medium shadow-md cursor-pointer">
                             Enviar Solicitud
                         </button>
                     </div>
