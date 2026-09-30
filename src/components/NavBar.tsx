@@ -74,6 +74,13 @@ function NavBar() {
                             </span>
                             <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-[#DE3933] transition-all duration-300 group-hover:w-full group-hover:left-0" />
                         </Link>
+                        <span className="bg-[#DE3933] w-[.2rem] h-5"/>
+                        <Link href="/contactanos" className="group relative inline-block">
+                            <span className="transition-colors group-hover:text-[#DE3933]">
+                                Contactanos
+                            </span>
+                            <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-[#DE3933] transition-all duration-300 group-hover:w-full group-hover:left-0" />
+                        </Link>
                     </ul>
                 </nav>
 
@@ -146,6 +153,9 @@ function NavBar() {
                                 </Link>
                                 <Link href="/quienes-somos" onClick={() => setMenuAbierto(false)} className="group relative inline-block">
                                     <span className="transition-colors group-hover:text-[#DE3933]">Quienes Somos</span>
+                                </Link>
+                                <Link href="/contactanos" onClick={() => setMenuAbierto(false)} className="group relative inline-block">
+                                    <span className="transition-colors group-hover:text-[#DE3933]">Contactanos</span>
                                 </Link>
                             </ul>
                         </nav>

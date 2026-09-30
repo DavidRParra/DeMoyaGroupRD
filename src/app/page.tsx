@@ -16,7 +16,7 @@ export default function Home() {
               {[
                 { src: "/hipoteca.jpg", text: "Saldar una Hipoteca" },
                 { src: "/NEGOCIO2.jpg", text: "Negocio" },
-                { src: "/viaje.jpg", text: "Viejes" },
+                { src: "/viaje.jpg", text: "Viajes" },
                 { src: "/emergencia medica.jpg", text: "Emergencia medica " },
                 { src: "/deuda.jpg", text: "Deudas" },
                 { src: "/casa.jpg", text: "Compra de vivienda " },
@@ -42,7 +42,7 @@ export default function Home() {
               {[
                 { src: "/hipoteca.jpg", text: "Saldar una Hipoteca" },
                 { src: "/NEGOCIO2.jpg", text: "Negocio" },
-                { src: "/viaje.jpg", text: "Viejes" },
+                { src: "/viaje.jpg", text: "Viajes" },
                 { src: "/emergencia medica.jpg", text: "Emergencia medica " },
                 { src: "/deuda.jpg", text: "Deudas" },
                 { src: "/casa.jpg", text: "Compra de vivienda " },
